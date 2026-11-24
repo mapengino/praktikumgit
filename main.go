@@ -13,8 +13,18 @@ func main() {
 	fmt.Print("Pilih menu (1-3): ")
 	fmt.Scan(&pilihan)
 
+	if pilihan < 1 || pilihan > 3 {
+		fmt.Println("Pilihan tidak valid!")
+		return
+	}
+
 	fmt.Print("Masukkan suhu dalam Celsius: ")
 	fmt.Scan(&celsius)
+
+	if celsius < -273.15 {
+		fmt.Println("Suhu tidak valid! Minimal -273.15 Celsius.")
+		return
+	}
 
 	if pilihan == 1 {
 		hasil = (celsius * 9 / 5) + 32
