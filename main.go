@@ -3,14 +3,27 @@ package main
 import "fmt"
 
 func main() {
-	var celsius, fahrenheit, kelvin float64
+	var pilihan int
+	var celsius, hasil float64
+
+	fmt.Println("=== Program Konversi Suhu ===")
+	fmt.Println("1. Celsius ke Fahrenheit")
+	fmt.Println("2. Celsius ke Kelvin")
+	fmt.Println("3. Celsius ke Reamur")
+	fmt.Print("Pilih menu (1-3): ")
+	fmt.Scan(&pilihan)
 
 	fmt.Print("Masukkan suhu dalam Celsius: ")
 	fmt.Scan(&celsius)
 
-	fahrenheit = (celsius * 9 / 5) + 32
-	kelvin = celsius + 273.15
-
-	fmt.Println("Hasil Fahrenheit:", fahrenheit)
-	fmt.Println("Hasil Kelvin:", kelvin)
+	if pilihan == 1 {
+		hasil = (celsius * 9 / 5) + 32
+		fmt.Println("Hasil:", hasil, "Fahrenheit")
+	} else if pilihan == 2 {
+		hasil = celsius + 273.15
+		fmt.Println("Hasil:", hasil, "Kelvin")
+	} else if pilihan == 3 {
+		hasil = celsius * 4 / 5
+		fmt.Println("Hasil:", hasil, "Reamur")
+	}
 }
